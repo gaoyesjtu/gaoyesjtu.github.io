@@ -9,11 +9,11 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Your Name / Site Title"
+title                    : "高小叶 Academic Pages"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+name                     : &name "高小叶"
+description              : &description "研究方向：数据科学、机器学习、自然语言处理"
+url                      : "https://gaoyesjtu.github.io/gaoxiaoye.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
@@ -23,13 +23,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "高小叶"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "Earth"
   employer         : "Red Brick University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "gaoye.sjtu@gmial.com" 
 
   # Academic websites
   academia         : # URL
@@ -48,7 +48,7 @@ author:
   codepen          : # Username
   dribbble         : # Username
   github           : "academicpages"
-  kaggle           : # Username  
+  kaggle           : "gaoxiaoye"  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
@@ -75,7 +75,7 @@ author:
   weibo            : # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : # Username
+  youtube          : "GaoYe"
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
@@ -160,7 +160,7 @@ analytics:
 include:
   - .htaccess
   - _pages
-  - files
+  - 文件
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -331,10 +331,10 @@ whitelist:
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
-  type: liquid
+  输入: liquid
   path: /categories/
 tag_archive:
-  type: liquid
+  输入: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
@@ -352,6 +352,6 @@ tag_archive:
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
-  clippings: all
+  clippings: 全部
   ignore:
     envs: development
