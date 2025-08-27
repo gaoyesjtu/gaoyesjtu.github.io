@@ -13,7 +13,7 @@ title                    : "高小叶 Academic Pages"
 title_separator          : "-"
 name                     : &name "高小叶"
 description              : &description "研究方向：数据科学、机器学习、自然语言处理"
-url                      : "https://gaoyesjtu.github.io/gaoxiaoye.github.io"
+url                      : "https://gaoyesjtu.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
