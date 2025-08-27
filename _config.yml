@@ -24,10 +24,10 @@ author:
   # Biographic information
   avatar           : "images/avator.jpg"
   name             : "高小叶"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  pronouns         : "he"  
+  bio              : "探索更广阔的世界"
+  location         : "ShangHai"
+  employer         : "ShangHai Jiao Tong University"
   uri              : # URL
   email            : "gaoye.sjtu@gmial.com" 
 
