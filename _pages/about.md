@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
+这是写在前面的话。成立一个个人主页一直是我的一个小愿望，但我又总是一拖再拖。直到一个平平无奇的夏天的日子，天气晴朗，整个下午都无所事事，于是我就在偶然间完成了这个期待已久的事。过去，关于未来，我一直感到迷惘，但那又怎样？爱情需要体验，生活也是这样。所以，就让这个主页，作为一段新旅程的起点吧。
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+2025年8月
 
 A data-driven personal website
 ======
