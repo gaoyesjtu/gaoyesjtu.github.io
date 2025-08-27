@@ -24,7 +24,7 @@ author:
   # Biographic information
   avatar           : "avatar3.jpg"
   name             : "高小叶"
-  pronouns         : "he"  
+  pronouns         : # "he"  
   bio              : "探索更广阔的世界"
   location         : "ShangHai"
   employer         : "ShangHai Jiao Tong University"
