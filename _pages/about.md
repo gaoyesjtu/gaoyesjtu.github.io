@@ -37,6 +37,6 @@ redirect_from:
 
 </div>
 
-<div class="lang-en" style="display:none">
+<div class="lang-en">
   Hello, I'm GaoYe, an AI researcher.
 </div>
