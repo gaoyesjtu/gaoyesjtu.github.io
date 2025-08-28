@@ -34,6 +34,6 @@ redirect_from:
 {% endfor %}
 </div>
 
-<div class="lang-en">
+<div class="lang-en" style="display:none">
   Hello, I'm GaoYe, an AI researcher.
 </div>
