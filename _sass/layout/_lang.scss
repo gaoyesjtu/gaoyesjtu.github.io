@@ -1,0 +1,22 @@
+/* Language toggle styles */
+
+/* 默认中文显示 */
+html[data-lang="zh"] .lang-en { 
+  display: none; 
+}
+html[data-lang="zh"] .lang-zh { 
+  display: block; 
+}
+
+/* 切换到英文时，隐藏中文 */
+html[data-lang="en"] .lang-zh { 
+  display: none; 
+}
+html[data-lang="en"] .lang-en { 
+  display: block; 
+}
+
+/* 过渡效果（可选） */
+.lang-zh, .lang-en {
+  transition: opacity 0.3s ease;
+}
