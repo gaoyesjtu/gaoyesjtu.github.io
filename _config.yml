@@ -229,14 +229,17 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  dairys:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
+  # _dairys
   - scope:
       path: ""
-      type: posts
+      type: dairys
     values:
       layout: single
       author_profile: true
@@ -272,7 +275,7 @@ defaults:
   # _projects
   - scope:
       path: ""
-      type: projects
+      type: 项目
     values:
       layout: single
       author_profile: true
