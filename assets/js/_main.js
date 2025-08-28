@@ -57,7 +57,7 @@ var toggleLang = () => {
 
 // 初始化时根据 localStorage 记忆选择
 const savedLang = localStorage.getItem("lang") || "zh";
-$("html").attr("data-lang", savedLang);
+$("html")。attr("data-lang", savedLang);
 
 
 /* ==========================================================================
@@ -72,7 +72,7 @@ let plotlyElements = document.querySelectorAll("pre>code.language-plotly");
 if (plotlyElements.length > 0) {
   document.addEventListener("readystatechange", () => {
     if (document.readyState === "complete") {
-      plotlyElements.forEach((elem) => {
+      plotlyElements。forEach((elem) => {
         // Parse the Plotly JSON data and hide it
         var jsonData = JSON.parse(elem.textContent);
         elem.parentElement.classList.add("hidden");
@@ -106,7 +106,7 @@ $(document).ready(function () {
   // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
   window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", (e) => {
+        。addEventListener("change", (e) => {
           if (!localStorage.getItem("theme")) {
             setTheme(e.matches ? "dark" : "light");
           }
