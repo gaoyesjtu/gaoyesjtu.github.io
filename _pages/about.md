@@ -17,20 +17,22 @@ redirect_from:
 
 你好！我是高小叶，一个专注于自我内心的机器学习初学者，同时也是一个怀着作家梦想的孩子。无论是学习，还是写作，都正如我的青春时光一般，才刚刚开始。可就算现在一无所有，可我还是会勇敢地走下去。我相信只要怀揣着梦想和对生活的热爱，无论前路如何，都有一盏灯，温暖我的内心。
 
-
-
-
+---
 
 ## 最新日记
-{% for diary in site.dairys limit:3 %}
-- [{{ diary.title }}]({{ diary.url }}) <span style="font-size:smaller">({{ diary.date | date: "%Y-%m-%d" }})</span>
+<ul class="archive__item-list">
+{% for diary in site.dairys limit: 3 %}
+<li><a href="{{ diary.url | relative_url }}">{{ diary.title }}</a> <small>({{ diary.date | date: "%Y-%m-%d" }})</small></li>
 {% endfor %}
-
+</ul>
 
 ## 最新项目
-{% for project in site.projects limit:3 %}
-- [{{ project.title }}]({{ project.url }})
+<ul class="archive__item-list">
+{% for project in site.projects limit: 3 %}
+<li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>
 {% endfor %}
+</ul>
+
 </div>
 
 <div class="lang-en" style="display:none">
