@@ -47,6 +47,19 @@ var toggleTheme = () => {
   setTheme(new_theme);
 };
 
+// Toggle the language manually
+var toggleLang = () => {
+  const current_lang = $("html").attr("data-lang") || "zh";
+  const new_lang = current_lang === "zh" ? "en" : "zh";
+  localStorage.setItem("lang", new_lang);
+  $("html").attr("data-lang", new_lang);
+};
+
+// 初始化时根据 localStorage 记忆选择
+const savedLang = localStorage.getItem("lang") || "zh";
+$("html").attr("data-lang", savedLang);
+
+
 /* ==========================================================================
    Plotly integration script so that Markdown codeblocks will be rendered
    ========================================================================== */
@@ -85,7 +98,7 @@ if (plotlyElements.length > 0) {
    Actions that should occur when the page has been fully loaded
    ========================================================================== */
 
-$(document).ready(function () {
+$(document)。ready(function () {
   // SCSS SETTINGS - These should be the same as the settings in the relevant files 
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
   const scssMastheadHeight = 70;  // pixels, from the current theme (e.g., /_sass/theme/_default.scss)
@@ -101,6 +114,9 @@ $(document).ready(function () {
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
+
+  $('#lang-toggle').on('click', toggleLang);
+
 
   // Enable the sticky footer
   var bumpIt = function () {
