@@ -1,4 +1,3 @@
-
 ---
 permalink: /
 title: "一段新旅程的起点"
