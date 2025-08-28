@@ -16,7 +16,8 @@ let determineComputedTheme = () => {
   if (themeSetting != "system") {
     return themeSetting;
   }
-  return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  // fix: use matchMedia instead of undefined userPref
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
 };
 
 // detect OS/browser preference
@@ -57,6 +58,7 @@ var toggleLang = () => {
 
 // 初始化时根据 localStorage 记忆选择
 const savedLang = localStorage.getItem("lang") || "zh";
+// fix: full-width dot -> half-width
 $("html").attr("data-lang", savedLang);
 
 
@@ -72,6 +74,7 @@ let plotlyElements = document.querySelectorAll("pre>code.language-plotly");
 if (plotlyElements.length > 0) {
   document.addEventListener("readystatechange", () => {
     if (document.readyState === "complete") {
+      // fix: full-width dot -> half-width
       plotlyElements.forEach((elem) => {
         // Parse the Plotly JSON data and hide it
         var jsonData = JSON.parse(elem.textContent);
@@ -105,18 +108,18 @@ $(document).ready(function () {
 
   // If the user hasn't chosen a theme, follow the OS preference
   setTheme();
-  window.matchMedia('(prefers-color-scheme: dark)')
-        。addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
-            setTheme(e.matches ? "dark" : "light");
-          }
-        });
+  // fix: full-width dot -> half-width
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      setTheme(e.matches ? "dark" : "light");
+    }
+  });
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
 
+  // Enable the language toggle
   $('#lang-toggle').on('click', toggleLang);
-
 
   // Enable the sticky footer
   var bumpIt = function () {
@@ -149,10 +152,9 @@ $(document).ready(function () {
     }
   });
 
-  // Init smooth scroll, this needs to be slightly more than then fixed masthead height
+  // Init smooth scroll, this needs to be slightly more than the fixed masthead height
   $("a").smoothScroll({
     offset: -scssMastheadHeight,
     preventDefault: false,
   });
-
 });
