@@ -43,3 +43,9 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+/* override: remove underline for H2 in article content */
+.page__content h2 {
+  border-bottom: none;
+  padding-bottom: 0; /* 可选：去掉多余的底部留白 */
+}
