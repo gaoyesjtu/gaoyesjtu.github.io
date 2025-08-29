@@ -54,7 +54,7 @@ August 2025
 
 ## About Me
 
-Hello! I am Gao Xiaoye, a beginner in machine learning who is focused on exploring my inner self, and also a child with a dream of becoming a writer.
+Hello! I am Gao XiaoYe, a beginner in machine learning who is focused on exploring my inner self, and also a child with a dream of becoming a writer.
 
 Although both my studies and writing are just beginning, just like my youthful years, even if I have nothing now, I will still walk forward bravely. I believe that as long as I hold onto my dreams and my love for life, no matter how the road ahead may be, there will always be a light to warm my heart.
 
