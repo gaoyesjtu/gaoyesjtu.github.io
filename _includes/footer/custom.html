@@ -1,19 +1,17 @@
-<!-- start custom footer snippets -->
+<!-- Busuanzi 站点总访问量 / 独立访客 -->
+<span id="busuanzi_container_site_pv">
+  本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span id="busuanzi_container_site_uv" style="margin-left:.75em">
+  访客数 <span id="busuanzi_value_site_uv"></span> 人
+</span>
 
-<a href="/sitemap/">Sitemap</a>
+<!-- 只在文章页显示的“本文阅读次数” -->
+{% if page.layout == "single" %}
+<span id="busuanzi_container_page_pv" style="margin-left:.75em">
+  本文阅读 <span id="busuanzi_value_page_pv"></span> 次
+</span>
+{% endif %}
 
-<!-- Support for MatJax -->
-<script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
-
-<!-- Support for Plotly -->
-<script defer src='https://cdnjs.cloudflare.com/ajax/libs/plotly.js/3.0.1/plotly.min.js'></script>
-
-<!-- Support for Mermaid -->
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({startOnLoad:true, theme:'default'});
-    await mermaid.run({querySelector:'code.language-mermaid'});
-</script>
-
-<!-- end custom footer snippets -->
+<!-- 脚本（建议用 https，避免部分浏览器拦截） -->
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
