@@ -1,17 +1,12 @@
-<!-- Busuanzi 站点总访问量 / 独立访客 -->
+<!-- Busuanzi 全站访问量统计 -->
+
 <span id="busuanzi_container_site_pv">
   本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
 </span>
+
 <span id="busuanzi_container_site_uv" style="margin-left:.75em">
   访客数 <span id="busuanzi_value_site_uv"></span> 人
 </span>
 
-<!-- 只在文章页显示的“本文阅读次数” -->
-{% if page.layout == "single" %}
-<span id="busuanzi_container_page_pv" style="margin-left:.75em">
-  本文阅读 <span id="busuanzi_value_page_pv"></span> 次
-</span>
-{% endif %}
-
-<!-- 脚本（建议用 https，避免部分浏览器拦截） -->
+<!-- 加载 Busuanzi 脚本 -->
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
