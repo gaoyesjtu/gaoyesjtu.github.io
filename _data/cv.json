@@ -13,15 +13,12 @@
       "en": "Passionate about machine learning and writing, building a personal space for research and life notes."
     },
     "profiles": [
-      {
-        "network": "GitHub",
-        "url": "https://github.com/gaoyesjtu"
-      }
+      { "network": "GitHub", "url": "https://github.com/gaoyesjtu" }
     ]
   },
   "education": [
     {
-      "institution": { "zh": "上海交通大学", "en": "ShangHai Jiao Tong University" },
+      "institution": { "zh": "上海交通大学", "en": "Shanghai Jiao Tong University" },
       "area": { "zh": "计算机科学", "en": "Computer Science (B.S.)" },
       "endDate": "2028",
       "courses": {
@@ -41,8 +38,8 @@
     {
       "name": { "zh": "机器学习基础", "en": "ML Basics" },
       "keywords": {
-        "zh": ["线性/逻辑回归", "卷积神经网络"，"优化器"],
-        "en": ["Linear/Logistic Regression","CNN","Optimizer"]
+        "zh": ["线性/逻辑回归", "卷积神经网络", "优化器"],
+        "en": ["Linear/Logistic Regression", "Convolutional Neural Networks (CNNs)", "Optimizers"]
       }
     }
   ],
@@ -52,16 +49,16 @@
       "date": "2025",
       "description": {
         "zh": "个人博客 + 评论功能 + 访客统计。",
-        "en": "Personal blog + comments + visitor stats."
+        "en": "Personal blog with comments and visitor stats."
       },
       "url": "https://gaoyesjtu.github.io/projects/my-first-project/"
     }
   ],
   "languages": [
     { "language": { "zh": "中文", "en": "Chinese" }, "fluency": { "zh": "母语", "en": "Native" } },
-    { "language": { "zh": "英语", "en": "English" }, "fluency": { "zh": "第二语言", "en": "Sceond langage" } }
+    { "language": { "zh": "英语", "en": "English" }, "fluency": { "zh": "第二语言", "en": "Second language" } }
   ],
   "interests": [
-    { "name": { "zh": "写作", "en": "Writing" }, "keywords": { "zh": ["小说", "散文","诗歌"], "en": ["Novels", "Essays","Poems"] } }
+    { "name": { "zh": "写作", "en": "Writing" }, "keywords": { "zh": ["小说", "散文", "诗歌"], "en": ["Novels", "Essays", "Poems"] } }
   ]
 }
