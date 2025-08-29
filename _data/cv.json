@@ -1,152 +1,67 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": { "zh": "高小叶", "en": "Gao Ye" },
+    "label": { "zh": "机器学习初学者 / 写作爱好者", "en": "Machine Learning Learner / Aspiring Writer" },
+    "email": "gaoye.sjtu@gmail.com",
+    "website": "https://gaoyesjtu.github.io",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": { "zh": "上海", "en": "Shanghai" },
+      "countryCode": "CN"
+    },
+    "summary": {
+      "zh": "热爱机器学习与写作，正在搭建属于自己的研究与生活记录空间。",
+      "en": "Passionate about machine learning and writing, building a personal space for research and life notes."
     },
     "profiles": [
       {
-        "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
-      },
-      {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "url": "https://github.com/gaoyesjtu"
       }
     ]
   },
-  "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
+      "institution": { "zh": "上海交通大学", "en": "ShangHai Jiao Tong University" },
+      "area": { "zh": "计算机科学", "en": "Computer Science (B.S.)" },
+      "endDate": "2028",
+      "courses": {
+        "zh": ["线性代数", "概率论", "数据结构"],
+        "en": ["Linear Algebra", "Probability", "Data Structures"]
+      }
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
-  "publications": [
+  "skills": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": { "zh": "编程", "en": "Programming" },
+      "keywords": {
+        "zh": ["Python", "C/C++", "Git/GitHub"],
+        "en": ["Python", "C/C++", "Git/GitHub"]
+      }
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
-    }
-  ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "name": { "zh": "机器学习基础", "en": "ML Basics" },
+      "keywords": {
+        "zh": ["线性/逻辑回归", "卷积神经网络"，"优化器"],
+        "en": ["Linear/Logistic Regression","CNN","Optimizer"]
+      }
     }
   ],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "name": { "zh": "第一个项目", "en": "My First Project" },
+      "date": "2025",
+      "description": {
+        "zh": "个人博客 + 评论功能 + 访客统计。",
+        "en": "Personal blog + comments + visitor stats."
+      },
+      "url": "https://gaoyesjtu.github.io/projects/my-first-project/"
     }
+  ],
+  "languages": [
+    { "language": { "zh": "中文", "en": "Chinese" }, "fluency": { "zh": "母语", "en": "Native" } },
+    { "language": { "zh": "英语", "en": "English" }, "fluency": { "zh": "第二语言", "en": "Sceond langage" } }
+  ],
+  "interests": [
+    { "name": { "zh": "写作", "en": "Writing" }, "keywords": { "zh": ["小说", "散文","诗歌"], "en": ["Novels", "Essays","Poems"] } }
   ]
 }
