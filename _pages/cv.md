@@ -1,9 +1,8 @@
 ---
-layout: single
+layout: cv-layout
 title: "CV"
 permalink: /cv/
-layout: cv-layout
-author_profile: true
+author_profile: false
 ---
-
+{% include base_path %}
 {% include cv-template.html %}
