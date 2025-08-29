@@ -6,4 +6,3 @@ author_profile: true
 ---
 
 {% include cv-template.html %}
-
