@@ -45,5 +45,38 @@ comments: true
 </div>
 
 <div class="lang-en">
-  Hello, I'm GaoYe, an AI researcher.
+
+This is a note written at the beginning.
+
+Creating a personal homepage has always been one of my small wishes, but I kept putting it off. Until one ordinary summer day, the weather was sunny, and the whole afternoon was idle, I accidentally completed this long-awaited thing. About the past and the future, I have always felt lost—lost in others’ lives and their gazes. But perhaps only by moving forward will you discover what your own life should be like. Just as love needs to be experienced, so does life. Let this homepage be the starting point of a new journey.
+
+August 2025
+
+## About Me
+
+Hello! I am Gao Xiaoye, a beginner in machine learning who is focused on exploring my inner self, and also a child with a dream of becoming a writer.
+
+Although both my studies and writing are just beginning, just like my youthful years, even if I have nothing now, I will still walk forward bravely. I believe that as long as I hold onto my dreams and my love for life, no matter how the road ahead may be, there will always be a light to warm my heart.
+
+## About This Site
+
+This is Gao Xiaoye’s personal homepage—a small hut in the vast ocean of the internet, a place to settle my heart. Although the hut is small, it is warm and cozy, like a harbor where one can always dock. When tired, you can always read a book here slowly or enjoy a cup of hot tea.
+
+On this site, I will post some research diaries, recording bits and pieces of my academic life. Sometimes it may be only a sentence or two, but they are footprints of my research and study. I will also publish some completed projects here and on GitHub, hoping they will be helpful to others. Whether you are a good friend or a stranger, you are welcome to leave a message in the comment section at the bottom of the site! I also hope my life can bring warmth to you.
+
+## Latest Diaries
+<ul class="archive__item-list">
+{% for diary in site.dairys limit: 3 %}
+<li><a href="{{ diary.url | relative_url }}">{{ diary.title }}</a> <small>({{ diary.date | date: "%Y-%m-%d" }})</small></li>
+{% endfor %}
+</ul>
+
+## Latest Projects
+<ul class="archive__item-list">
+{% for project in site.projects limit: 3 %}
+<li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>
+{% endfor %}
+</ul>
+
 </div>
+
