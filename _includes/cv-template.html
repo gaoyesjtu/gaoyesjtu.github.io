@@ -1,23 +1,29 @@
 {%- assign cv = site.data.cv -%}
 
+{%- comment -%}
+  Helper: pick value by lang with graceful fallback
+  usage: {{ obj.zh | default: obj | default: "" }}
+{%- endcomment -%}
+
 <!-- ===== Chinese ===== -->
 <div class="lang-zh cv-root">
 
   {%- if cv.basics -%}
+  {%- assign name_zh    = cv.basics.name.zh    | default: cv.basics.name -%}
+  {%- assign label_zh   = cv.basics.label.zh   | default: cv.basics.label -%}
+  {%- assign city_zh    = cv.basics.location.city.zh | default: cv.basics.location.city -%}
+  {%- assign summary_zh = cv.basics.summary.zh | default: cv.basics.summary -%}
+
   <section class="cv-section cv-basics">
-    <h1 class="cv-name">{{ cv.basics.name.zh | default: cv.basics.name }}</h1>
-    <p class="cv-label">{{ cv.basics.label.zh }}</p>
+    <h1 class="cv-name">{{ name_zh }}</h1>
+    {%- if label_zh %}<p class="cv-label">{{ label_zh }}</p>{% endif %}
     <p class="cv-contacts">
-      {%- if cv.basics.email -%}<span>✉ {{ cv.basics.email }}</span>{%- endif -%}
-      {%- if cv.basics.website -%}<span> · 🌐 <a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a></span>{%- endif -%}
-      {%- if cv.basics.location and cv.basics.location.city -%}
-        <span> · 📍 {{ cv.basics.location.city.zh }}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}</span>
-      {%- endif -%}
+      {%- if cv.basics.email %}<span>✉ {{ cv.basics.email }}</span>{%- endif -%}
+      {%- if cv.basics.website %}<span> · 🌐 <a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a></span>{%- endif -%}
+      {%- if city_zh %}<span> · 📍 {{ city_zh }}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}</span>{%- endif -%}
     </p>
-    {%- if cv.basics.summary and cv.basics.summary.zh -%}
-      <p class="cv-summary">{{ cv.basics.summary.zh }}</p>
-    {%- endif -%}
-    {%- if cv.basics.profiles -%}
+    {%- if summary_zh %}<p class="cv-summary">{{ summary_zh }}</p>{%- endif -%}
+    {%- if cv.basics.profiles %}
       <p class="cv-profiles">
         {%- for p in cv.basics.profiles -%}
           <a href="{{ p.url }}">{{ p.network }}</a>{% unless forloop.last %} · {% endunless %}
@@ -32,12 +38,15 @@
     <h2>教育经历</h2>
     <ul class="cv-list">
       {%- for e in cv.education -%}
+      {%- assign inst_zh = e.institution.zh | default: e.institution -%}
+      {%- assign area_zh = e.area.zh | default: e.area -%}
       <li>
-        <strong>{{ e.institution.zh }}</strong> — {{ e.area.zh }}
+        <strong>{{ inst_zh }}</strong> — {{ area_zh }}
         {%- if e.endDate -%}（{{ e.endDate }}）{%- endif -%}
-        {%- if e.gpa -%}<div>GPA: {{ e.gpa }}</div>{%- endif -%}
-        {%- if e.courses and e.courses.zh -%}
-          <div>核心课程：{{ e.courses.zh | join: "，" }}</div>
+        {%- if e.gpa %}<div>GPA: {{ e.gpa }}</div>{% endif -%}
+        {%- assign courses_zh = e.courses.zh | default: e.courses -%}
+        {%- if courses_zh and courses_zh.size > 0 -%}
+          <div>核心课程：{{ courses_zh | join: "，" }}</div>
         {%- endif -%}
       </li>
       {%- endfor -%}
@@ -50,15 +59,19 @@
     <h2>经历</h2>
     <ul class="cv-list">
       {%- for w in cv.work -%}
+      {%- assign company_zh = w.company.zh | default: w.company -%}
+      {%- assign pos_zh     = w.position.zh | default: w.position -%}
+      {%- assign sum_zh     = w.summary.zh | default: w.summary -%}
+      {%- assign hl_zh      = w.highlights.zh | default: w.highlights -%}
       <li>
-        <strong>{{ w.company.zh }}</strong> — {{ w.position.zh }}
+        <strong>{{ company_zh }}</strong> — {{ pos_zh }}
         {%- if w.startDate or w.endDate -%}
           <span class="cv-dates">（{{ w.startDate }}{% if w.endDate %}–{{ w.endDate }}{% endif %}）</span>
         {%- endif -%}
-        {%- if w.summary and w.summary.zh -%}<div>{{ w.summary.zh }}</div>{%- endif -%}
-        {%- if w.highlights and w.highlights.zh -%}
+        {%- if sum_zh %}<div>{{ sum_zh }}</div>{%- endif -%}
+        {%- if hl_zh and hl_zh.size > 0 -%}
           <ul class="cv-highlights">
-            {%- for h in w.highlights.zh -%}<li>{{ h }}</li>{%- endfor -%}
+            {%- for h in hl_zh -%}<li>{{ h }}</li>{%- endfor -%}
           </ul>
         {%- endif -%}
       </li>
@@ -72,10 +85,9 @@
     <h2>技能</h2>
     <ul class="cv-list">
       {%- for s in cv.skills -%}
-      <li>
-        <strong>{{ s.name.zh }}</strong>：
-        {{ s.keywords.zh | default: s.keywords | join: "、" }}
-      </li>
+      {%- assign sname_zh = s.name.zh | default: s.name -%}
+      {%- assign skeys_zh = s.keywords.zh | default: s.keywords -%}
+      <li><strong>{{ sname_zh }}</strong>：{{ skeys_zh | join: "、" }}</li>
       {%- endfor -%}
     </ul>
   </section>
@@ -86,10 +98,12 @@
     <h2>项目</h2>
     <ul class="cv-list">
       {%- for p in cv.portfolio -%}
+      {%- assign pname_zh = p.name.zh | default: p.name -%}
+      {%- assign pdesc_zh = p.description.zh | default: p.description -%}
       <li>
-        <strong>{{ p.name.zh }}</strong>{% if p.date %}（{{ p.date }}）{% endif %}
-        {%- if p.description and p.description.zh -%} — {{ p.description.zh }}{%- endif -%}
-        {%- if p.url -%} · <a href="{{ p.url }}">链接</a>{%- endif -%}
+        <strong>{{ pname_zh }}</strong>{% if p.date %}（{{ p.date }}）{% endif %}
+        {%- if pdesc_zh %} — {{ pdesc_zh }}{%- endif -%}
+        {%- if p.url %} · <a href="{{ p.url }}">链接</a>{% endif -%}
       </li>
       {%- endfor -%}
     </ul>
@@ -101,7 +115,9 @@
     <h2>语言</h2>
     <ul class="cv-list">
       {%- for l in cv.languages -%}
-      <li>{{ l.language.zh }}（{{ l.fluency.zh }}）</li>
+      {%- assign lang_zh = l.language.zh | default: l.language -%}
+      {%- assign flu_zh  = l.fluency.zh  | default: l.fluency  -%}
+      <li>{{ lang_zh }}（{{ flu_zh }}）</li>
       {%- endfor -%}
     </ul>
   </section>
@@ -112,9 +128,9 @@
     <h2>兴趣</h2>
     <ul class="cv-list">
       {%- for i in cv.interests -%}
-      <li>
-        {{ i.name.zh }}{% if i.keywords and i.keywords.zh %}：{{ i.keywords.zh | join: "、" }}{% endif %}
-      </li>
+      {%- assign iname_zh = i.name.zh | default: i.name -%}
+      {%- assign ikey_zh  = i.keywords.zh | default: i.keywords -%}
+      <li>{{ iname_zh }}{% if ikey_zh %}：{{ ikey_zh | join: "、" }}{% endif %}</li>
       {%- endfor -%}
     </ul>
   </section>
@@ -126,20 +142,21 @@
 <div class="lang-en cv-root">
 
   {%- if cv.basics -%}
+  {%- assign name_en    = cv.basics.name.en    | default: cv.basics.name -%}
+  {%- assign label_en   = cv.basics.label.en   | default: cv.basics.label -%}
+  {%- assign city_en    = cv.basics.location.city.en | default: cv.basics.location.city -%}
+  {%- assign summary_en = cv.basics.summary.en | default: cv.basics.summary -%}
+
   <section class="cv-section cv-basics">
-    <h1 class="cv-name">{{ cv.basics.name.en | default: cv.basics.name }}</h1>
-    <p class="cv-label">{{ cv.basics.label.en }}</p>
+    <h1 class="cv-name">{{ name_en }}</h1>
+    {%- if label_en %}<p class="cv-label">{{ label_en }}</p>{% endif %}
     <p class="cv-contacts">
-      {%- if cv.basics.email -%}<span>✉ {{ cv.basics.email }}</span>{%- endif -%}
-      {%- if cv.basics.website -%}<span> · 🌐 <a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a></span>{%- endif -%}
-      {%- if cv.basics.location and cv.basics.location.city -%}
-        <span> · 📍 {{ cv.basics.location.city.en }}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}</span>
-      {%- endif -%}
+      {%- if cv.basics.email %}<span>✉ {{ cv.basics.email }}</span>{%- endif -%}
+      {%- if cv.basics.website %}<span> · 🌐 <a href="{{ cv.basics.website }}">{{ cv.basics.website }}</a></span>{%- endif -%}
+      {%- if city_en %}<span> · 📍 {{ city_en }}{% if cv.basics.location.countryCode %}, {{ cv.basics.location.countryCode }}{% endif %}</span>{%- endif -%}
     </p>
-    {%- if cv.basics.summary and cv.basics.summary.en -%}
-      <p class="cv-summary">{{ cv.basics.summary.en }}</p>
-    {%- endif -%}
-    {%- if cv.basics.profiles -%}
+    {%- if summary_en %}<p class="cv-summary">{{ summary_en }}</p>{%- endif -%}
+    {%- if cv.basics.profiles %}
       <p class="cv-profiles">
         {%- for p in cv.basics.profiles -%}
           <a href="{{ p.url }}">{{ p.network }}</a>{% unless forloop.last %} · {% endunless %}
@@ -154,12 +171,15 @@
     <h2>Education</h2>
     <ul class="cv-list">
       {%- for e in cv.education -%}
+      {%- assign inst_en = e.institution.en | default: e.institution -%}
+      {%- assign area_en = e.area.en | default: e.area -%}
       <li>
-        <strong>{{ e.institution.en }}</strong> — {{ e.area.en }}
-        {%- if e.endDate -%} ({{ e.endDate }}){%- endif -%}
-        {%- if e.gpa -%}<div>GPA: {{ e.gpa }}</div>{%- endif -%}
-        {%- if e.courses and e.courses.en -%}
-          <div>Key Courses: {{ e.courses.en | join: ", " }}</div>
+        <strong>{{ inst_en }}</strong> — {{ area_en }}
+        {%- if e.endDate %} ({{ e.endDate }}){% endif -%}
+        {%- if e.gpa %}<div>GPA: {{ e.gpa }}</div>{% endif -%}
+        {%- assign courses_en = e.courses.en | default: e.courses -%}
+        {%- if courses_en and courses_en.size > 0 -%}
+          <div>Key Courses: {{ courses_en | join: ", " }}</div>
         {%- endif -%}
       </li>
       {%- endfor -%}
@@ -172,15 +192,19 @@
     <h2>Experience</h2>
     <ul class="cv-list">
       {%- for w in cv.work -%}
+      {%- assign company_en = w.company.en | default: w.company -%}
+      {%- assign pos_en     = w.position.en | default: w.position -%}
+      {%- assign sum_en     = w.summary.en | default: w.summary -%}
+      {%- assign hl_en      = w.highlights.en | default: w.highlights -%}
       <li>
-        <strong>{{ w.company.en }}</strong> — {{ w.position.en }}
+        <strong>{{ company_en }}</strong> — {{ pos_en }}
         {%- if w.startDate or w.endDate -%}
           <span class="cv-dates"> ({{ w.startDate }}{% if w.endDate %}–{{ w.endDate }}{% endif %})</span>
         {%- endif -%}
-        {%- if w.summary and w.summary.en -%}<div>{{ w.summary.en }}</div>{%- endif -%}
-        {%- if w.highlights and w.highlights.en -%}
+        {%- if sum_en %}<div>{{ sum_en }}</div>{%- endif -%}
+        {%- if hl_en and hl_en.size > 0 -%}
           <ul class="cv-highlights">
-            {%- for h in w.highlights.en -%}<li>{{ h }}</li>{%- endfor -%}
+            {%- for h in hl_en -%}<li>{{ h }}</li>{%- endfor -%}
           </ul>
         {%- endif -%}
       </li>
@@ -194,10 +218,9 @@
     <h2>Skills</h2>
     <ul class="cv-list">
       {%- for s in cv.skills -%}
-      <li>
-        <strong>{{ s.name.en }}</strong>:
-        {{ s.keywords.en | default: s.keywords | join: ", " }}
-      </li>
+      {%- assign sname_en = s.name.en | default: s.name -%}
+      {%- assign skeys_en = s.keywords.en | default: s.keywords -%}
+      <li><strong>{{ sname_en }}</strong>: {{ skeys_en | join: ", " }}</li>
       {%- endfor -%}
     </ul>
   </section>
@@ -208,10 +231,12 @@
     <h2>Projects</h2>
     <ul class="cv-list">
       {%- for p in cv.portfolio -%}
+      {%- assign pname_en = p.name.en | default: p.name -%}
+      {%- assign pdesc_en = p.description.en | default: p.description -%}
       <li>
-        <strong>{{ p.name.en }}</strong>{% if p.date %} ({{ p.date }}){% endif %}
-        {%- if p.description and p.description.en -%} — {{ p.description.en }}{%- endif -%}
-        {%- if p.url -%} · <a href="{{ p.url }}">Link</a>{%- endif -%}
+        <strong>{{ pname_en }}</strong>{% if p.date %} ({{ p.date }}){% endif %}
+        {%- if pdesc_en %} — {{ pdesc_en }}{%- endif -%}
+        {%- if p.url %} · <a href="{{ p.url }}">Link</a>{% endif -%}
       </li>
       {%- endfor -%}
     </ul>
@@ -223,7 +248,9 @@
     <h2>Languages</h2>
     <ul class="cv-list">
       {%- for l in cv.languages -%}
-      <li>{{ l.language.en }} ({{ l.fluency.en }})</li>
+      {%- assign lang_en = l.language.en | default: l.language -%}
+      {%- assign flu_en  = l.fluency.en  | default: l.fluency  -%}
+      <li>{{ lang_en }} ({{ flu_en }})</li>
       {%- endfor -%}
     </ul>
   </section>
@@ -234,9 +261,9 @@
     <h2>Interests</h2>
     <ul class="cv-list">
       {%- for i in cv.interests -%}
-      <li>
-        {{ i.name.en }}{% if i.keywords and i.keywords.en %}: {{ i.keywords.en | join: ", " }}{% endif %}
-      </li>
+      {%- assign iname_en = i.name.en | default: i.name -%}
+      {%- assign ikey_en  = i.keywords.en | default: i.keywords -%}
+      <li>{{ iname_en }}{% if ikey_en %}: {{ ikey_en | join: ", " }}{% endif %}</li>
       {%- endfor -%}
     </ul>
   </section>
