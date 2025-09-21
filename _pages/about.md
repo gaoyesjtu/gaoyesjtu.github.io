@@ -28,10 +28,13 @@ comments: true
 
 ## 最新日记
 <ul class="archive__item-list">
-{% for diary in site.dairys limit: 3 %}
-<li><a href="{{ diary.url | relative_url }}">{{ diary.title }}</a> <small>({{ diary.date | date: "%Y-%m-%d" }})</small></li>
+{% assign dairys_sorted = site.dairys | sort: "date" | reverse %}
+{% for diary in dairys_sorted limit: 3 %}
+  <li><a href="{{ diary.url | relative_url }}">{{ diary.title }}</a>
+      <small>({{ diary.date | date: "%Y-%m-%d" }})</small></li>
 {% endfor %}
 </ul>
+
 
 ## 最新项目
 <ul class="archive__item-list">
