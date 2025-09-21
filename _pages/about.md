@@ -65,8 +65,9 @@ On this site, I will post some research diaries, recording bits and pieces of my
 ## Latest Diaries
 <ul class="archive__item-list">
 {% assign dairys_sorted = site.dairys | sort: "date" | reverse %}
-{% for diary in site.dairys limit: 3 %}
-<li><a href="{{ diary.url | relative_url }}">{{ diary.title }}</a> <small>({{ diary.date | date: "%Y-%m-%d" }})</small></li>
+{% for diary in dairys_sorted limit: 3 %}
+  <li><a href="{{ diary.url | relative_url }}">{{ diary.title }}</a>
+      <small>({{ diary.date | date: "%Y-%m-%d" }})</small></li>
 {% endfor %}
 </ul>
 
